@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inicio_experiencias",
+  "info": {
+    "singularName": "inicio-experiencia",
+    "pluralName": "inicio-experiencias",
+    "displayName": "Inicio Experiencia"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "descripcion": {
+      "type": "blocks"
+    },
+    "texto_boton": {
+      "type": "string"
+    },
+    "enlace_boton": {
+      "type": "string"
+    },
+    "imagenes": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

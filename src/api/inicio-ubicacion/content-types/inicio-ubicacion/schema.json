@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "inicio_ubicacions",
+  "info": {
+    "singularName": "inicio-ubicacion",
+    "pluralName": "inicio-ubicacions",
+    "displayName": "Inicio Ubicacion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "default": "UBICACIÓN"
+    },
+    "descripcion": {
+      "type": "blocks"
+    },
+    "url_mapa": {
+      "type": "text",
+      "default": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4721.401924260467!2d-77.63738878357361!3d-5.682766508443572!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91b68d4aa45224cb%3A0xf0e734b828906870!2sReserva%20Arena%20Blanca!5e0!3m2!1ses-419!2spe!4v1748978213006!5m2!1ses-419!2spe"
+    }
+  }
+}

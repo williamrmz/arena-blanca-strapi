@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "inicio_heroes",
+  "info": {
+    "singularName": "inicio-hero",
+    "pluralName": "inicio-heroes",
+    "displayName": "Inicio Hero"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "texto_botom": {
+      "type": "string",
+      "default": "RESERVAR AHORA"
+    },
+    "encabezado": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}
