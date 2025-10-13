@@ -557,6 +557,66 @@ export interface ApiInicioUbicacionInicioUbicacion
   };
 }
 
+export interface ApiNosotrosHeroNosotrosHero extends Struct.SingleTypeSchema {
+  collectionName: 'nosotros_heroes';
+  info: {
+    displayName: 'Nosotros Hero';
+    pluralName: 'nosotros-heroes';
+    singularName: 'nosotros-hero';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    imagen_fondo: Schema.Attribute.Media<'images' | 'files', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::nosotros-hero.nosotros-hero'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNosotrosSeccionNosotrosSeccion
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'nosotros_seccions';
+  info: {
+    displayName: 'Nosotros Seccion';
+    pluralName: 'nosotros-seccions';
+    singularName: 'nosotros-seccion';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descripcion: Schema.Attribute.Blocks;
+    imagen: Schema.Attribute.Media<'images' | 'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::nosotros-seccion.nosotros-seccion'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1071,6 +1131,8 @@ declare module '@strapi/strapi' {
       'api::inicio-experiencia.inicio-experiencia': ApiInicioExperienciaInicioExperiencia;
       'api::inicio-hero.inicio-hero': ApiInicioHeroInicioHero;
       'api::inicio-ubicacion.inicio-ubicacion': ApiInicioUbicacionInicioUbicacion;
+      'api::nosotros-hero.nosotros-hero': ApiNosotrosHeroNosotrosHero;
+      'api::nosotros-seccion.nosotros-seccion': ApiNosotrosSeccionNosotrosSeccion;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

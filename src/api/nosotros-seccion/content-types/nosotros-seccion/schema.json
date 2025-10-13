@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nosotros_seccions",
+  "info": {
+    "singularName": "nosotros-seccion",
+    "pluralName": "nosotros-seccions",
+    "displayName": "Nosotros Seccion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "blocks"
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}
