@@ -8,8 +8,9 @@ module.exports = [
       origin: [
         'http://localhost:3000',
         'http://localhost:4321',
-        'https://tu-dominio.com',
-        'https://www.tu-dominio.com'
+        'https://reservarenablanca.com',
+        'https://www.reservarenablanca.com',
+        'https://arena-blanca-strapi-production.up.railway.app'
       ],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
