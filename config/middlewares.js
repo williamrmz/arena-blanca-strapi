@@ -14,13 +14,7 @@ module.exports = [
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
-  {
-    name: 'strapi::session',
-    config: {
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'none',
-    },
-  },
+  'strapi::session',
   'strapi::favicon',
   'strapi::public',
 ];

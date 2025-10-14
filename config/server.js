@@ -7,12 +7,4 @@ module.exports = ({ env }) => ({
   webhooks: {
     populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
   },
-  // Configuración para HTTPS en producción
-  url: env('PUBLIC_URL', 'https://arena-blanca-strapi.onrender.com'),
-  proxy: true,
-  // Configuración de cookies para HTTPS
-  cookies: {
-    secure: env.bool('NODE_ENV') === 'production',
-    sameSite: 'none',
-  },
 });
