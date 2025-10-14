@@ -485,6 +485,7 @@ export interface ApiInicioExperienciaInicioExperiencia
       'api::inicio-experiencia.inicio-experiencia'
     > &
       Schema.Attribute.Private;
+    order: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     texto_boton: Schema.Attribute.String;
     titulo: Schema.Attribute.String & Schema.Attribute.Required;
@@ -609,6 +610,178 @@ export interface ApiNosotrosSeccionNosotrosSeccion
       'api::nosotros-seccion.nosotros-seccion'
     > &
       Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServicioEncabezadoServicioEncabezado
+  extends Struct.SingleTypeSchema {
+  collectionName: 'servicio_encabezados';
+  info: {
+    displayName: 'Servicio Encabezado';
+    pluralName: 'servicio-encabezados';
+    singularName: 'servicio-encabezado';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descripcion_alimentacion: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'En nuestro restaurante brindamos el servicio de alimentaci\u00F3n a nuestros hu\u00E9spedes y visitantes, previa reserva. Ofrecemos platos t\u00EDpicos y criollos, as\u00ED como platos vegetarianos y veganos. Contamos con personal calificado e id\u00F3neo para la manipulaci\u00F3n y preparaci\u00F3n de alimentos.'>;
+    descripcion_observacion: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'Nuestra reserva cuenta con comederos de perdices y codornices, jard\u00EDn de colibr\u00EDes y comederos de tangaras, as\u00ED como trochas en donde se realiza la observaci\u00F3n y fotograf\u00EDa de aves, siendo posible encontrar especies de aves end\u00E9micas y de h\u00E1bitat restringido.'>;
+    descripcion_recomendacion: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'Para disfrutar al m\u00E1ximo de tu experiencia en la Reserva Arena Blanca, te recomendamos seguir estas pautas importantes.'>;
+    desripcion_alojamiento: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Contamos con habitaciones simples, dobles y matrimoniales en donde aseguramos su descanso en medio de lanaturaleza, contamos con servicio de agua fr\u00EDa y caliente, energ\u00EDa el\u00E9ctrica con panel solar e internet.'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::servicio-encabezado.servicio-encabezado'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo_alimentacion: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Alimentaci\u00F3n'>;
+    titulo_alojamiento: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Alojamiento'>;
+    titulo_observacion: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Observaci\u00F3n y fotograf\u00EDa de aves'>;
+    titulo_recomendacion: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Recomendaciones para tu visita'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServicioExperienciaServicioExperiencia
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'servicio_experiencias';
+  info: {
+    displayName: 'Servicio Experiencia';
+    pluralName: 'servicio-experiencias';
+    singularName: 'servicio-experiencia';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descripcion: Schema.Attribute.String;
+    horario: Schema.Attribute.String;
+    imagenes: Schema.Attribute.Media<'images' | 'files', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::servicio-experiencia.servicio-experiencia'
+    > &
+      Schema.Attribute.Private;
+    mejor_epoca: Schema.Attribute.String;
+    order: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServicioGaleriaAlimentacionServicioGaleriaAlimentacion
+  extends Struct.SingleTypeSchema {
+  collectionName: 'servicio_galeria_alimentacions';
+  info: {
+    displayName: 'Servicio Galeria Alimentacion';
+    pluralName: 'servicio-galeria-alimentacions';
+    singularName: 'servicio-galeria-alimentacion';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    galeria: Schema.Attribute.Media<'images' | 'files', true> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::servicio-galeria-alimentacion.servicio-galeria-alimentacion'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServicioGaleriaHabitacionServicioGaleriaHabitacion
+  extends Struct.SingleTypeSchema {
+  collectionName: 'servicio_galeria_habitacions';
+  info: {
+    displayName: 'Servicio Galeria Habitacion';
+    pluralName: 'servicio-galeria-habitacions';
+    singularName: 'servicio-galeria-habitacion';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    galeria: Schema.Attribute.Media<'images' | 'files', true> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::servicio-galeria-habitacion.servicio-galeria-habitacion'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServicioHabitacionServicioHabitacion
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'servicio_habitacions';
+  info: {
+    displayName: 'Servicio Habitacion';
+    pluralName: 'servicio-habitacions';
+    singularName: 'servicio-habitacion';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    caracterisiticas: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    destacado: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::servicio-habitacion.servicio-habitacion'
+    > &
+      Schema.Attribute.Private;
+    orden: Schema.Attribute.Integer;
+    periodo: Schema.Attribute.String & Schema.Attribute.DefaultTo<'por noche'>;
+    precio: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     titulo: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -1133,6 +1306,11 @@ declare module '@strapi/strapi' {
       'api::inicio-ubicacion.inicio-ubicacion': ApiInicioUbicacionInicioUbicacion;
       'api::nosotros-hero.nosotros-hero': ApiNosotrosHeroNosotrosHero;
       'api::nosotros-seccion.nosotros-seccion': ApiNosotrosSeccionNosotrosSeccion;
+      'api::servicio-encabezado.servicio-encabezado': ApiServicioEncabezadoServicioEncabezado;
+      'api::servicio-experiencia.servicio-experiencia': ApiServicioExperienciaServicioExperiencia;
+      'api::servicio-galeria-alimentacion.servicio-galeria-alimentacion': ApiServicioGaleriaAlimentacionServicioGaleriaAlimentacion;
+      'api::servicio-galeria-habitacion.servicio-galeria-habitacion': ApiServicioGaleriaHabitacionServicioGaleriaHabitacion;
+      'api::servicio-habitacion.servicio-habitacion': ApiServicioHabitacionServicioHabitacion;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

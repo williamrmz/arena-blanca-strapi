@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "inicio_experiencias",
+  "collectionName": "servicio_experiencias",
   "info": {
-    "singularName": "inicio-experiencia",
-    "pluralName": "inicio-experiencias",
-    "displayName": "Inicio Experiencia"
+    "singularName": "servicio-experiencia",
+    "pluralName": "servicio-experiencias",
+    "displayName": "Servicio Experiencia"
   },
   "options": {
     "draftAndPublish": true
@@ -12,16 +12,15 @@
   "pluginOptions": {},
   "attributes": {
     "titulo": {
-      "type": "string",
-      "required": true
-    },
-    "descripcion": {
-      "type": "blocks"
-    },
-    "texto_boton": {
       "type": "string"
     },
-    "enlace_boton": {
+    "descripcion": {
+      "type": "string"
+    },
+    "horario": {
+      "type": "string"
+    },
+    "mejor_epoca": {
       "type": "string"
     },
     "imagenes": {

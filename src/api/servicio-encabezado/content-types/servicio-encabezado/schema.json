@@ -1,0 +1,47 @@
+{
+  "kind": "singleType",
+  "collectionName": "servicio_encabezados",
+  "info": {
+    "singularName": "servicio-encabezado",
+    "pluralName": "servicio-encabezados",
+    "displayName": "Servicio Encabezado"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo_observacion": {
+      "type": "string",
+      "default": "Observación y fotografía de aves"
+    },
+    "titulo_alimentacion": {
+      "type": "string",
+      "default": "Alimentación"
+    },
+    "titulo_alojamiento": {
+      "type": "string",
+      "default": "Alojamiento"
+    },
+    "titulo_recomendacion": {
+      "type": "string",
+      "default": "Recomendaciones para tu visita"
+    },
+    "descripcion_observacion": {
+      "type": "text",
+      "default": "Nuestra reserva cuenta con comederos de perdices y codornices, jardín de colibríes y comederos de tangaras, así como trochas en donde se realiza la observación y fotografía de aves, siendo posible encontrar especies de aves endémicas y de hábitat restringido."
+    },
+    "descripcion_alimentacion": {
+      "type": "text",
+      "default": "En nuestro restaurante brindamos el servicio de alimentación a nuestros huéspedes y visitantes, previa reserva. Ofrecemos platos típicos y criollos, así como platos vegetarianos y veganos. Contamos con personal calificado e idóneo para la manipulación y preparación de alimentos."
+    },
+    "desripcion_alojamiento": {
+      "type": "string",
+      "default": "Contamos con habitaciones simples, dobles y matrimoniales en donde aseguramos su descanso en medio de lanaturaleza, contamos con servicio de agua fría y caliente, energía eléctrica con panel solar e internet."
+    },
+    "descripcion_recomendacion": {
+      "type": "text",
+      "default": "Para disfrutar al máximo de tu experiencia en la Reserva Arena Blanca, te recomendamos seguir estas pautas importantes."
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "servicio_habitacions",
+  "info": {
+    "singularName": "servicio-habitacion",
+    "pluralName": "servicio-habitacions",
+    "displayName": "Servicio Habitacion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "precio": {
+      "type": "string"
+    },
+    "periodo": {
+      "type": "string",
+      "default": "por noche"
+    },
+    "caracterisiticas": {
+      "type": "blocks"
+    },
+    "destacado": {
+      "type": "boolean"
+    },
+    "orden": {
+      "type": "integer"
+    }
+  }
+}
