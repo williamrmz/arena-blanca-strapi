@@ -2,19 +2,20 @@
 
 module.exports = {
   /**
-   * An asynchronous register function that runs before
-   * your application is initialized.
-   *
-   * This gives you an opportunity to extend code.
+   * Runs before your application is initialized.
    */
-  register(/*{ strapi }*/) {},
+  register({ strapi }) {
+    // Fix para Railway/Proxies: fuerza a tratar la conexión como HTTPS
+    strapi.server.use(async (ctx, next) => {
+      if (ctx.req?.socket) {
+        ctx.req.socket.encrypted = true;
+      }
+      await next();
+    });
+  },
 
   /**
-   * An asynchronous bootstrap function that runs before
-   * your application gets started.
-   *
-   * This gives you an opportunity to set up your data model,
-   * run jobs, or perform some special logic.
+   * Runs before your application gets started.
    */
   bootstrap(/*{ strapi }*/) {},
 };
