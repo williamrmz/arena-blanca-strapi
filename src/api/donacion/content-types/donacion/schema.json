@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "donacions",
+  "info": {
+    "singularName": "donacion",
+    "pluralName": "donacions",
+    "displayName": "Donacion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "default": "DONACIONES"
+    },
+    "subitutlo": {
+      "type": "string",
+      "default": "Apoya la conservación de la biodiversidad"
+    },
+    "encabezado": {
+      "type": "string",
+      "default": "Tu apoyo hace la diferencia"
+    },
+    "descripcion": {
+      "type": "text",
+      "default": "Las donaciones nos ayudan a mantener y mejorar la Reserva Arena Blanca, contribuyendo a la conservación de la biodiversidad amazónica y al desarrollo sostenible de nuestra comunidad local."
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

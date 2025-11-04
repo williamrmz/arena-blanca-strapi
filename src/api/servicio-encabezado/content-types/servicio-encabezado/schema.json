@@ -4,7 +4,7 @@
   "info": {
     "singularName": "servicio-encabezado",
     "pluralName": "servicio-encabezados",
-    "displayName": "Servicio Encabezado"
+    "displayName": "Servicio"
   },
   "options": {
     "draftAndPublish": true

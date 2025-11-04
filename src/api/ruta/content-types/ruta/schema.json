@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "rutas",
+  "info": {
+    "singularName": "ruta",
+    "pluralName": "rutas",
+    "displayName": "Ruta"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "RUTA DE AVES DEL BPAM"
+    },
+    "descripcion": {
+      "type": "text",
+      "default": "La Ruta de Aves del Bosque de Protección Alto Mayo es un recorrido compuesto por 8 puntos de observación de aves a lo largo de esta área natural protegida, donde se pueden observar más de 500 especies de aves, lo que lo convierte en una de las áreas protegidas más biodiversas del Perú y uno de los destinos más importantes del corredor Nor-Amazónico para el aviturismo.  La ruta nace del trabajo articulado entre la gestión del BPAM y cada uno de los centros de observación de aves, en el marco de los Acuerdos de Conservación: Reserva Arena Blanca, Fundo Alto Nieva, Llantería Birds, Royal Sunangel y Comité de Vigilancia y Turismo Urkuchaki."
+    }
+  }
+}

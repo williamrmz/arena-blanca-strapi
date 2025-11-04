@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cuenta_bancarias",
+  "info": {
+    "singularName": "cuenta-bancaria",
+    "pluralName": "cuenta-bancarias",
+    "displayName": "Cuenta Bancaria"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "banco": {
+      "type": "string"
+    },
+    "moneda": {
+      "type": "string"
+    },
+    "nro_cuenta": {
+      "type": "string"
+    },
+    "codigo_interbancario": {
+      "type": "string"
+    },
+    "codigo_swift": {
+      "type": "string"
+    }
+  }
+}

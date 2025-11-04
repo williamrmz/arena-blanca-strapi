@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "servicio_platillos",
+  "info": {
+    "singularName": "servicio-platillo",
+    "pluralName": "servicio-platillos",
+    "displayName": "Servicio Platillo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "precio": {
+      "type": "string"
+    },
+    "caracterisiticas": {
+      "type": "blocks"
+    },
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "desayuno",
+        "almuerzo",
+        "cena"
+      ]
+    }
+  }
+}

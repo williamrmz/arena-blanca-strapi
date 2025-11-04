@@ -430,6 +430,133 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiContactoContacto extends Struct.SingleTypeSchema {
+  collectionName: 'contactos';
+  info: {
+    displayName: 'Contacto';
+    pluralName: 'contactos';
+    singularName: 'contacto';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contacto.contacto'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'CONT\u00C1CTANOS'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCuentaBancariaCuentaBancaria
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'cuenta_bancarias';
+  info: {
+    displayName: 'Cuenta Bancaria';
+    pluralName: 'cuenta-bancarias';
+    singularName: 'cuenta-bancaria';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    banco: Schema.Attribute.String;
+    codigo_interbancario: Schema.Attribute.String;
+    codigo_swift: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cuenta-bancaria.cuenta-bancaria'
+    > &
+      Schema.Attribute.Private;
+    moneda: Schema.Attribute.String;
+    nro_cuenta: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiDonacionDonacion extends Struct.SingleTypeSchema {
+  collectionName: 'donacions';
+  info: {
+    displayName: 'Donacion';
+    pluralName: 'donacions';
+    singularName: 'donacion';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descripcion: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'Las donaciones nos ayudan a mantener y mejorar la Reserva Arena Blanca, contribuyendo a la conservaci\u00F3n de la biodiversidad amaz\u00F3nica y al desarrollo sostenible de nuestra comunidad local.'>;
+    encabezado: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Tu apoyo hace la diferencia'>;
+    imagen: Schema.Attribute.Media<'images' | 'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::donacion.donacion'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subitutlo: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Apoya la conservaci\u00F3n de la biodiversidad'>;
+    titulo: Schema.Attribute.String & Schema.Attribute.DefaultTo<'DONACIONES'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiGaleriaGaleria extends Struct.SingleTypeSchema {
+  collectionName: 'galerias';
+  info: {
+    displayName: 'Galeria ';
+    pluralName: 'galerias';
+    singularName: 'galeria';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    galeria_imagenes: Schema.Attribute.Media<'images' | 'files', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::galeria.galeria'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Galer\u00EDa de Aves'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiInicioCaracteristicaInicioCaracteristica
   extends Struct.CollectionTypeSchema {
   collectionName: 'inicio_caracteristicas';
@@ -618,11 +745,39 @@ export interface ApiNosotrosSeccionNosotrosSeccion
   };
 }
 
+export interface ApiRutaRuta extends Struct.SingleTypeSchema {
+  collectionName: 'rutas';
+  info: {
+    displayName: 'Ruta';
+    pluralName: 'rutas';
+    singularName: 'ruta';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descripcion: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'La Ruta de Aves del Bosque de Protecci\u00F3n Alto Mayo es un recorrido compuesto por 8 puntos de observaci\u00F3n de aves a lo largo de esta \u00E1rea natural protegida, donde se pueden observar m\u00E1s de 500 especies de aves, lo que lo convierte en una de las \u00E1reas protegidas m\u00E1s biodiversas del Per\u00FA y uno de los destinos m\u00E1s importantes del corredor Nor-Amaz\u00F3nico para el aviturismo.  La ruta nace del trabajo articulado entre la gesti\u00F3n del BPAM y cada uno de los centros de observaci\u00F3n de aves, en el marco de los Acuerdos de Conservaci\u00F3n: Reserva Arena Blanca, Fundo Alto Nieva, Llanter\u00EDa Birds, Royal Sunangel y Comit\u00E9 de Vigilancia y Turismo Urkuchaki.'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::ruta.ruta'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'RUTA DE AVES DEL BPAM'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiServicioEncabezadoServicioEncabezado
   extends Struct.SingleTypeSchema {
   collectionName: 'servicio_encabezados';
   info: {
-    displayName: 'Servicio Encabezado';
+    displayName: 'Servicio';
     pluralName: 'servicio-encabezados';
     singularName: 'servicio-encabezado';
   };
@@ -783,6 +938,39 @@ export interface ApiServicioHabitacionServicioHabitacion
     periodo: Schema.Attribute.String & Schema.Attribute.DefaultTo<'por noche'>;
     precio: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServicioPlatilloServicioPlatillo
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'servicio_platillos';
+  info: {
+    displayName: 'Servicio Platillo';
+    pluralName: 'servicio-platillos';
+    singularName: 'servicio-platillo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    caracterisiticas: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descripcion: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::servicio-platillo.servicio-platillo'
+    > &
+      Schema.Attribute.Private;
+    precio: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    tipo: Schema.Attribute.Enumeration<['desayuno', 'almuerzo', 'cena']>;
     titulo: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1300,17 +1488,23 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::contacto.contacto': ApiContactoContacto;
+      'api::cuenta-bancaria.cuenta-bancaria': ApiCuentaBancariaCuentaBancaria;
+      'api::donacion.donacion': ApiDonacionDonacion;
+      'api::galeria.galeria': ApiGaleriaGaleria;
       'api::inicio-caracteristica.inicio-caracteristica': ApiInicioCaracteristicaInicioCaracteristica;
       'api::inicio-experiencia.inicio-experiencia': ApiInicioExperienciaInicioExperiencia;
       'api::inicio-hero.inicio-hero': ApiInicioHeroInicioHero;
       'api::inicio-ubicacion.inicio-ubicacion': ApiInicioUbicacionInicioUbicacion;
       'api::nosotros-hero.nosotros-hero': ApiNosotrosHeroNosotrosHero;
       'api::nosotros-seccion.nosotros-seccion': ApiNosotrosSeccionNosotrosSeccion;
+      'api::ruta.ruta': ApiRutaRuta;
       'api::servicio-encabezado.servicio-encabezado': ApiServicioEncabezadoServicioEncabezado;
       'api::servicio-experiencia.servicio-experiencia': ApiServicioExperienciaServicioExperiencia;
       'api::servicio-galeria-alimentacion.servicio-galeria-alimentacion': ApiServicioGaleriaAlimentacionServicioGaleriaAlimentacion;
       'api::servicio-galeria-habitacion.servicio-galeria-habitacion': ApiServicioGaleriaHabitacionServicioGaleriaHabitacion;
       'api::servicio-habitacion.servicio-habitacion': ApiServicioHabitacionServicioHabitacion;
+      'api::servicio-platillo.servicio-platillo': ApiServicioPlatilloServicioPlatillo;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
